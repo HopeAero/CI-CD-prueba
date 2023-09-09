@@ -16,5 +16,9 @@ jobs:
      
           script: |
             cd /var/www 
-            git clone git@github.com:HopeAero/CI-CD-prueba.git 
-            echo 'Deployment successful to digital ocean' 
+            if [ ! -d "CI-CD-prueba" ]; then
+              git clone git@github.com:HopeAero/CI-CD-prueba.git 
+              echo 'Repository cloned successfully to digital ocean'
+            else
+              sudo git pull
+              echo 'Repository already exists previously, pulling changes'
