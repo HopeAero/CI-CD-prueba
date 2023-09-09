@@ -20,6 +20,6 @@ jobs:
               git clone git@github.com:HopeAero/CI-CD-prueba.git 
               echo 'Repository cloned successfully to digital ocean'
             else
-              sudo git pull
+              git pull
               echo 'Repository already exists previously, pulling changes'
             fi
